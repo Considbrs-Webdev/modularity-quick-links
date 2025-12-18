@@ -1,0 +1,37 @@
+{
+    "name": "considbrs-webdev/modularity-quick-links",
+    "description": "A module for Modularity that creates the ability for the user to create a grid of cards that link to important pages.",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Consid Borås AB",
+            "email": "webdev.boras@consid.se"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "installer-paths": {
+            "vendor/{$vendor}/{$name}": [
+                "type:wordpress-muplugin",
+                "type:wordpress-theme",
+                "type:wordpress-plugin",
+                "type:acf-plugin"
+            ]
+        }
+    },
+    "require": {
+        "helsingborg-stad/municipio": "^6.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ModularityQuickLinks\\": "source/php/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}
