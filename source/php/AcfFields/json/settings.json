@@ -89,12 +89,12 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Yes",
+            "message": "",
             "default_value": 0,
             "allow_in_bindings": 0,
-            "ui": 0,
             "ui_on_text": "",
-            "ui_off_text": ""
+            "ui_off_text": "",
+            "ui": 1
         },
         {
             "key": "field_694460586a00e",

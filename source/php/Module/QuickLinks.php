@@ -20,11 +20,35 @@ class QuickLinks extends \Modularity\Module
         $fields = $this->getFields();
 
         $data = [
-            'links' => !empty($fields['links']) ? $fields['links'] : [],
-            'columns' => !empty($fields['columns']) ? $fields['columns'] : '2',
+            'maxItemsPerRow' => !empty($fields['max_items_per_row']) ? (int) $fields['max_items_per_row'] : 4,
+            'useIcons' => !empty($fields['use_icons']),
+            'useShortDescription' => !empty($fields['use_short_description']),
+            'largeIcons' => !empty($fields['large_icons']),
+            'links' => $this->parseLinks($fields['links'] ?? []),
         ];
 
         return $data;
+    }
+
+    /**
+     * Parse and format the links repeater field
+     * @param array $links
+     * @return array
+     */
+    private function parseLinks(array $links): array
+    {
+        if (empty($links)) {
+            return [];
+        }
+
+        return array_map(function ($link) {
+            return [
+                'icon' => $link['icon'] ?? '',
+                'title' => $link['title'] ?? '',
+                'link' => $link['link'] ?? '',
+                'description' => $link['description'] ?? '',
+            ];
+        }, $links);
     }
 
     /**
