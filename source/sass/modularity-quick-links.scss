@@ -1,6 +1,7 @@
 .modularity-quick-links {
     --quick-links-card-min-width: 250px;
-    --quick-links-card-padding: 1.5rem;
+    --quick-links-card-padding-x: 1.5rem;
+    --quick-links-card-padding-y: 1.5rem;
     --quick-links-background-color: transparent;
     --quick-links-border-color: #e0e0e0;
     --quick-links-border-width: 0;
@@ -29,8 +30,9 @@
 
     &__grid {
         display: grid;
-        gap: var(--quick-links-inner-border-width); // Border width creates the border effect between cards
+        gap: var(--quick-links-inner-border-width);
         grid-template-columns: repeat(auto-fit, minmax(var(--quick-links-card-min-width), 1fr));
+        background-color: var(--quick-links-border-color);
     }
 
     // Respect max items per row setting
@@ -69,7 +71,7 @@
         column-gap: var(--quick-links-icon-gap);
         row-gap: var(--quick-links-item-row-gap);
         align-items: start;
-        padding: var(--quick-links-card-padding);
+        padding: var(--quick-links-card-padding-y) var(--quick-links-card-padding-x);
         background-color: var(--quick-links-background-color);
         text-decoration: none;
         color: inherit;
