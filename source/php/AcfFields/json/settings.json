@@ -7,23 +7,33 @@
             "label": "Max items per row",
             "name": "max_items_per_row",
             "aria-label": "",
-            "type": "number",
+            "type": "select",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "33",
                 "class": "",
                 "id": ""
             },
+            "choices": {
+                "2": "Two",
+                "4": "Four",
+                "6": "Six",
+                "8": "Eight"
+            },
             "default_value": 4,
-            "min": 2,
-            "max": 8,
-            "allow_in_bindings": 0,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_custom": 0,
             "placeholder": "",
-            "step": 1,
-            "prepend": "",
-            "append": ""
+            "search_placeholder": "",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_69445fc16a00b",
