@@ -1,54 +1,65 @@
 .modularity-quick-links {
     --quick-links-card-min-width: 250px;
     --quick-links-card-padding: 1.5rem;
+    --quick-links-background-color: transparent;
     --quick-links-border-color: #e0e0e0;
-    --quick-links-border-radius: 8px;
-    --quick-links-hover-bg: rgba(0, 0, 0, 0.03);
+    --quick-links-border-width: 0;
+    --quick-links-inner-border-width: 1px; // Border between cards
+    --quick-links-border-radius: 0;
+    --quick-links-hover-amount: 0.1;
+    --quick-links-hover-color: rgba(255, 255, 255, var(--quick-links-hover-amount)); // Default: lighten. Use rgba(0, 0, 0, var(--quick-links-hover-amount)) to darken
     --quick-links-transition: background-color 0.2s ease;
     --quick-links-icon-size: 1.5rem;
-    --quick-links-icon-size-large: 4rem;
+    --quick-links-icon-size-large: 3rem;
     --quick-links-icon-gap: 1rem;
     --quick-links-item-row-gap: 1rem;
+    --quick-links-icon-color: #1a1a1a;
+    --quick-links-title-color: #1a1a1a;
+    --quick-links-description-color: #1a1a1a;
 
-    // Outer border and rounded corners
-    border: 1px solid var(--quick-links-border-color);
+    // Smaller minimum width when descriptions are not used
+    &:not([data-use-description="true"]) {
+        --quick-links-card-min-width: 175px;
+    }
+
+    // Outer container with border and rounded corners
+    border: var(--quick-links-border-width) solid var(--quick-links-border-color);
     border-radius: var(--quick-links-border-radius);
     overflow: hidden;
-    background-color: var(--quick-links-border-color); // Border color shows through as grid lines
 
     &__grid {
         display: grid;
-        gap: 1px; // 1px gap creates the border effect between cards
+        gap: var(--quick-links-inner-border-width); // Border width creates the border effect between cards
         grid-template-columns: repeat(auto-fit, minmax(var(--quick-links-card-min-width), 1fr));
     }
 
     // Respect max items per row setting
     &[data-max-items="2"] &__grid {
-        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 2 - 1px)), 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 2 - var(--quick-links-inner-border-width))), 1fr));
     }
 
     &[data-max-items="3"] &__grid {
-        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 3 - 1px)), 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 3 - var(--quick-links-inner-border-width))), 1fr));
     }
 
     &[data-max-items="4"] &__grid {
-        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 4 - 1px)), 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 4 - var(--quick-links-inner-border-width))), 1fr));
     }
 
     &[data-max-items="5"] &__grid {
-        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 5 - 1px)), 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 5 - var(--quick-links-inner-border-width))), 1fr));
     }
 
     &[data-max-items="6"] &__grid {
-        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 6 - 1px)), 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 6 - var(--quick-links-inner-border-width))), 1fr));
     }
 
     &[data-max-items="7"] &__grid {
-        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 7 - 1px)), 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 7 - var(--quick-links-inner-border-width))), 1fr));
     }
 
     &[data-max-items="8"] &__grid {
-        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 8 - 1px)), 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 8 - var(--quick-links-inner-border-width))), 1fr));
     }
 
     &__card {
@@ -59,10 +70,11 @@
         row-gap: var(--quick-links-item-row-gap);
         align-items: start;
         padding: var(--quick-links-card-padding);
-        background-color: #fff;
+        background-color: var(--quick-links-background-color);
         text-decoration: none;
         color: inherit;
         transition: var(--quick-links-transition);
+        position: relative;
 
         // Without icon - single column layout
         &:not(.modularity-quick-links__card--has-icon) {
@@ -70,7 +82,16 @@
         }
 
         &:hover {
-            background-color: var(--quick-links-hover-bg);
+
+            // Hover overlay effect
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background-color: var(--quick-links-hover-color);
+                opacity: 1;
+                pointer-events: none;
+            }
         }
 
         &:focus-visible {
@@ -112,6 +133,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        color: var(--quick-links-icon-color);
 
         i {
             font-size: var(--quick-links-icon-size);
@@ -138,7 +160,7 @@
         display: block;
         margin: 0;
         font-weight: 600;
-        color: #1a1a1a;
+        color: var(--quick-links-title-color);
 
         // Without icon
         .modularity-quick-links__card:not(.modularity-quick-links__card--has-icon) & {
@@ -152,7 +174,7 @@
         margin: 0;
         font-size: 0.9rem;
         line-height: 1.5;
-        color: #666;
+        color: var(--quick-links-description-color);
     }
 
     // Responsive adjustments
