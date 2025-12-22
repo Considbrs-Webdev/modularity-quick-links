@@ -2,13 +2,13 @@
     --quick-links-card-min-width: 250px;
     --quick-links-card-padding-x: 1.5rem;
     --quick-links-card-padding-y: 1.5rem;
-    --quick-links-background-color: transparent;
+    --quick-links-background-color: #ffffff;
     --quick-links-border-color: #e0e0e0;
     --quick-links-border-width: 0;
     --quick-links-inner-border-width: 1px; // Border between cards
     --quick-links-border-radius: 0;
     --quick-links-hover-amount: 0.1;
-    --quick-links-hover-color: rgba(255, 255, 255, var(--quick-links-hover-amount)); // Default: lighten. Use rgba(0, 0, 0, var(--quick-links-hover-amount)) to darken
+    --quick-links-hover-color: rgba(0, 0, 0, var(--quick-links-hover-amount)); // Default: lighten. Use rgba(0, 0, 0, var(--quick-links-hover-amount)) to darken
     --quick-links-transition: background-color 0.2s ease;
     --quick-links-icon-size: 1.5rem;
     --quick-links-icon-size-large: 3rem;
@@ -37,31 +37,79 @@
 
     // Respect max items per row setting
     &[data-max-items="2"] &__grid {
-        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 2 - var(--quick-links-inner-border-width))), 1fr));
+        grid-template-columns: repeat(2, 1fr);
+
+        @media (max-width: 480px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 
     &[data-max-items="3"] &__grid {
-        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 3 - var(--quick-links-inner-border-width))), 1fr));
+        grid-template-columns: repeat(3, 1fr);
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 
     &[data-max-items="4"] &__grid {
-        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 4 - var(--quick-links-inner-border-width))), 1fr));
+        grid-template-columns: repeat(4, 1fr);
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 480px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 
     &[data-max-items="5"] &__grid {
-        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 5 - var(--quick-links-inner-border-width))), 1fr));
+        grid-template-columns: repeat(5, 1fr);
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 
     &[data-max-items="6"] &__grid {
-        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 6 - var(--quick-links-inner-border-width))), 1fr));
+        grid-template-columns: repeat(6, 1fr);
+
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 480px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 
     &[data-max-items="7"] &__grid {
-        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 7 - var(--quick-links-inner-border-width))), 1fr));
+        grid-template-columns: repeat(7, 1fr);
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 
     &[data-max-items="8"] &__grid {
-        grid-template-columns: repeat(auto-fit, minmax(max(var(--quick-links-card-min-width), calc(100% / 8 - var(--quick-links-inner-border-width))), 1fr));
+        grid-template-columns: repeat(8, 1fr);
+
+        @media (max-width: 1200px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 480px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 
     &__card {
@@ -182,7 +230,7 @@
 
     // Even distribution responsive rules based on item count
     // 2 items: 2 → 1
-    &[data-item-count="2"] &__grid {
+    &[data-item-count="2"]:not([data-max-items]) &__grid {
         grid-template-columns: repeat(2, 1fr);
 
         @media (max-width: 480px) {
@@ -191,7 +239,7 @@
     }
 
     // 3 items: 3 → 1
-    &[data-item-count="3"] &__grid {
+    &[data-item-count="3"]:not([data-max-items]) &__grid {
         grid-template-columns: repeat(3, 1fr);
 
         @media (max-width: 768px) {
@@ -200,7 +248,7 @@
     }
 
     // 4 items: 4 → 2 → 1
-    &[data-item-count="4"] &__grid {
+    &[data-item-count="4"]:not([data-max-items]) &__grid {
         grid-template-columns: repeat(4, 1fr);
 
         @media (max-width: 768px) {
@@ -213,7 +261,7 @@
     }
 
     // 5 items: 5 → 1
-    &[data-item-count="5"] &__grid {
+    &[data-item-count="5"]:not([data-max-items]) &__grid {
         grid-template-columns: repeat(5, 1fr);
 
         @media (max-width: 768px) {
@@ -222,7 +270,7 @@
     }
 
     // 6 items: 6 → 3 → 2 → 1
-    &[data-item-count="6"] &__grid {
+    &[data-item-count="6"]:not([data-max-items]) &__grid {
         grid-template-columns: repeat(6, 1fr);
 
         @media (max-width: 1024px) {
@@ -239,7 +287,7 @@
     }
 
     // 7 items: 7 → 1
-    &[data-item-count="7"] &__grid {
+    &[data-item-count="7"]:not([data-max-items]) &__grid {
         grid-template-columns: repeat(7, 1fr);
 
         @media (max-width: 768px) {
@@ -248,7 +296,7 @@
     }
 
     // 8 items: 8 → 4 → 2 → 1
-    &[data-item-count="8"] &__grid {
+    &[data-item-count="8"]:not([data-max-items]) &__grid {
         grid-template-columns: repeat(8, 1fr);
 
         @media (max-width: 1200px) {
@@ -265,7 +313,7 @@
     }
 
     // 9 items: 9 → 3 → 1
-    &[data-item-count="9"] &__grid {
+    &[data-item-count="9"]:not([data-max-items]) &__grid {
         grid-template-columns: repeat(9, 1fr);
 
         @media (max-width: 1024px) {
@@ -278,7 +326,7 @@
     }
 
     // 10 items: 10 → 5 → 2 → 1
-    &[data-item-count="10"] &__grid {
+    &[data-item-count="10"]:not([data-max-items]) &__grid {
         grid-template-columns: repeat(10, 1fr);
 
         @media (max-width: 1200px) {
@@ -295,7 +343,7 @@
     }
 
     // 12 items: 12 → 6 → 3 → 2 → 1
-    &[data-item-count="12"] &__grid {
+    &[data-item-count="12"]:not([data-max-items]) &__grid {
         grid-template-columns: repeat(12, 1fr);
 
         @media (max-width: 1400px) {
