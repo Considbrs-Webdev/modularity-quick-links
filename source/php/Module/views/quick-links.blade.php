@@ -1,6 +1,6 @@
 <div class="modularity-quick-links" data-max-items="{{ $maxItemsPerRow }}"
     data-large-icons="{{ $largeIcons ? 'true' : 'false' }}"
-    data-use-description="{{ $useShortDescription ? 'true' : 'false' }}">
+    data-use-description="{{ $useShortDescription ? 'true' : 'false' }}" data-item-count="{{ count($links) }}">
     <div class="modularity-quick-links__grid">
         @foreach ($links as $linkItem)
             <a href="{{ $linkItem['link'] }}"
