@@ -14,7 +14,7 @@ class App
 
         // Enqueue scripts and styles
         add_action('wp_enqueue_scripts', array($this, 'enqueueStyles'));
-        add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'));
+        //add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'));
     }
 
     /**
