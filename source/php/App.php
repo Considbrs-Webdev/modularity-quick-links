@@ -11,47 +11,6 @@ class App
     {
         // Register module
         add_action('init', array($this, 'registerModule'));
-
-        // Enqueue scripts and styles
-        add_action('wp_enqueue_scripts', array($this, 'enqueueStyles'));
-        //add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'));
-    }
-
-    /**
-     * Enqueue styles
-     * @return void
-     */
-    public function enqueueStyles()
-    {
-        $styleFile = CacheBust::name('css/modularity-quick-links.css');
-
-        if ($styleFile) {
-            wp_enqueue_style(
-                'modularity-quick-links',
-                MODULARITY_QUICK_LINKS_URL . '/assets/dist/' . $styleFile,
-                array(),
-                null
-            );
-        }
-    }
-
-    /**
-     * Enqueue scripts
-     * @return void
-     */
-    public function enqueueScripts()
-    {
-        $scriptFile = CacheBust::name('js/modularity-quick-links.js');
-
-        if ($scriptFile) {
-            wp_enqueue_script(
-                'modularity-quick-links',
-                MODULARITY_QUICK_LINKS_URL . '/assets/dist/' . $scriptFile,
-                array(),
-                null,
-                true
-            );
-        }
     }
 
     /**

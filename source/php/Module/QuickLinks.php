@@ -62,6 +62,43 @@ class QuickLinks extends \Modularity\Module
     }
 
     /**
+     * Enqueue styles
+     * @return void
+     */
+    public function style(): void
+    {
+        $styleFile = \ModularityQuickLinks\Helper\CacheBust::name('css/modularity-quick-links.css');
+
+        if ($styleFile) {
+            wp_enqueue_style(
+                'modularity-quick-links',
+                MODULARITY_QUICK_LINKS_URL . '/assets/dist/' . $styleFile,
+                [],
+                null
+            );
+        }
+    }
+
+    /**
+     * Enqueue scripts
+     * @return void
+     */
+    /* public function script(): void
+    {
+        $scriptFile = \ModularityQuickLinks\Helper\CacheBust::name('js/modularity-quick-links.js');
+
+        if ($scriptFile) {
+            wp_enqueue_script(
+                'modularity-quick-links',
+                MODULARITY_QUICK_LINKS_URL . '/assets/dist/' . $scriptFile,
+                [],
+                null,
+                true
+            );
+        }
+    } */
+
+    /**
      * Available "magic" methods for modules:
      * init()            What to do on initialization (if you must, use __construct with care, this will probably break stuff!!)
      * data()            Use to send data to view (return array)
