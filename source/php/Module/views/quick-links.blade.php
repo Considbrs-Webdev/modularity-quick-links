@@ -1,4 +1,4 @@
-<div class="modularity-quick-links" data-max-items="{{ $maxItemsPerRow }}"
+<div class="modularity-quick-links" data-max-items="{{ $maxItemsPerRow }}" data-gap="{{ $gap ?? 0 }}"
     data-large-icons="{{ $largeIcons ? 'true' : 'false' }}"
     data-use-description="{{ $useShortDescription ? 'true' : 'false' }}" data-item-count="{{ count($links) }}">
     <div class="modularity-quick-links__grid">

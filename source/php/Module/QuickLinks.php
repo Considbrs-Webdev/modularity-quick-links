@@ -25,6 +25,7 @@ class QuickLinks extends \Modularity\Module
             'useShortDescription' => !empty($fields['use_short_description']),
             'largeIcons' => !empty($fields['large_icons']),
             'links' => $this->parseLinks($fields['links'] ?? []),
+            'gap' => isset($fields['link_gap']) && $fields['link_gap'] !== '' ? (int) $fields['link_gap'] : 0,
         ];
 
         return $data;

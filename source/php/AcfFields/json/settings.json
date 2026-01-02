@@ -107,6 +107,29 @@
             "ui": 1
         },
         {
+            "key": "field_6957c3d4da403",
+            "label": "Link gap",
+            "name": "link_gap",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_694460586a00e",
             "label": "Links",
             "name": "links",

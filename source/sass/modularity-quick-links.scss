@@ -17,21 +17,53 @@
     --quick-links-icon-color: #1a1a1a;
     --quick-links-title-color: #1a1a1a;
     --quick-links-description-color: #1a1a1a;
+    --quick-links-gap: 0.5rem; // Default gap value (matches PHP default of 1)
+
+    // Set gap value from data attribute
+    // Gap values map to rem units for spacing between cards
+    // data-gap="0" or empty uses original 1px border width for the border effect
+    &[data-gap="0"],
+    &:not([data-gap]),
+    &[data-gap=""] {
+        --quick-links-gap: var(--quick-links-inner-border-width);
+    }
+    &[data-gap="1"] { --quick-links-gap: 0.5rem; }
+    &[data-gap="2"] { --quick-links-gap: 1rem; }
+    &[data-gap="3"] { --quick-links-gap: 1.5rem; }
+    &[data-gap="4"] { --quick-links-gap: 2rem; }
+    &[data-gap="5"] { --quick-links-gap: 2.5rem; }
+    &[data-gap="6"] { --quick-links-gap: 3rem; }
+    &[data-gap="7"] { --quick-links-gap: 3.5rem; }
+    &[data-gap="8"] { --quick-links-gap: 4rem; }
+    &[data-gap="9"] { --quick-links-gap: 4.5rem; }
+    &[data-gap="10"] { --quick-links-gap: 5rem; }
 
     // Smaller minimum width when descriptions are not used
     &:not([data-use-description="true"]) {
         --quick-links-card-min-width: 175px;
     }
 
-    // Outer container with border and rounded corners
-    border: var(--quick-links-border-width) solid var(--quick-links-border-color);
+    // Outer container with border and rounded corners (only when gap is 0)
     border-radius: var(--quick-links-border-radius);
     overflow: hidden;
 
+    // Border only needed when gap is 0 or empty (acts as container border)
+    &[data-gap="0"],
+    &:not([data-gap]),
+    &[data-gap=""] {
+        border: var(--quick-links-border-width) solid var(--quick-links-border-color);
+    }
+
     &__grid {
         display: grid;
-        gap: var(--quick-links-inner-border-width);
+        gap: var(--quick-links-gap);
         grid-template-columns: repeat(auto-fit, minmax(var(--quick-links-card-min-width), 1fr));
+    }
+
+    // Background color only needed when gap is 0 or empty (acts as border between cards)
+    &[data-gap="0"] &__grid,
+    &:not([data-gap]) &__grid,
+    &[data-gap=""] &__grid {
         background-color: var(--quick-links-border-color);
     }
 

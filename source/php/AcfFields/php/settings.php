@@ -1,7 +1,9 @@
 <?php 
 
-if (function_exists('acf_add_local_field_group')) {
-    acf_add_local_field_group(array(
+
+if (function_exists('acf_add_local_field_group')) {
+
+    acf_add_local_field_group(array(
     'key' => 'group_69445f2589f85',
     'title' => __('Quick links', 'modularity-quick-links'),
     'fields' => array(
@@ -110,6 +112,46 @@
             'ui' => 1,
         ),
         4 => array(
+            'key' => 'field_6957c3d4da403',
+            'label' => __('Link gap', 'modularity-quick-links'),
+            'name' => 'link_gap',
+            'aria-label' => '',
+            'type' => 'select',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'choices' => array(
+                0 => __('0 - 1px (No gap - original border style)', 'modularity-quick-links'),
+                1 => __('1 - 0.5rem', 'modularity-quick-links'),
+                2 => __('2 - 1rem', 'modularity-quick-links'),
+                3 => __('3 - 1.5rem', 'modularity-quick-links'),
+                4 => __('4 - 2rem', 'modularity-quick-links'),
+                5 => __('5 - 2.5rem', 'modularity-quick-links'),
+                6 => __('6 - 3rem', 'modularity-quick-links'),
+                7 => __('7 - 3.5rem', 'modularity-quick-links'),
+                8 => __('8 - 4rem', 'modularity-quick-links'),
+                9 => __('9 - 4.5rem', 'modularity-quick-links'),
+                10 => __('10 - 5rem', 'modularity-quick-links'),
+            ),
+            'default_value' => 0,
+            'return_format' => 'value',
+            'multiple' => 0,
+            'allow_custom' => 0,
+            'placeholder' => '',
+            'search_placeholder' => '',
+            'allow_null' => 0,
+            'allow_in_bindings' => 0,
+            'ui' => 0,
+            'ajax' => 0,
+            'create_options' => 0,
+            'save_options' => 0,
+        ),
+        5 => array(
             'key' => 'field_694460586a00e',
             'label' => __('Links', 'modularity-quick-links'),
             'name' => 'links',
@@ -266,4 +308,5 @@
     'acfe_meta' => '',
     'acfe_note' => '',
 ));
-}
+
+}
