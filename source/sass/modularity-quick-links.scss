@@ -72,7 +72,7 @@
         grid-template-columns: repeat(2, 1fr);
 
         @media (max-width: 480px) {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
@@ -92,7 +92,7 @@
         }
 
         @media (max-width: 480px) {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
@@ -116,7 +116,7 @@
         }
 
         @media (max-width: 480px) {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
@@ -140,7 +140,7 @@
         }
 
         @media (max-width: 480px) {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
@@ -261,12 +261,12 @@
     }
 
     // Even distribution responsive rules based on item count
-    // 2 items: 2 → 1
+    // 2 items: 2 → 2
     &[data-item-count="2"]:not([data-max-items]) &__grid {
         grid-template-columns: repeat(2, 1fr);
 
         @media (max-width: 480px) {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
@@ -279,7 +279,7 @@
         }
     }
 
-    // 4 items: 4 → 2 → 1
+    // 4 items: 4 → 2 → 2
     &[data-item-count="4"]:not([data-max-items]) &__grid {
         grid-template-columns: repeat(4, 1fr);
 
@@ -288,7 +288,7 @@
         }
 
         @media (max-width: 480px) {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
@@ -301,7 +301,7 @@
         }
     }
 
-    // 6 items: 6 → 3 → 2 → 1
+    // 6 items: 6 → 3 → 2 → 2
     &[data-item-count="6"]:not([data-max-items]) &__grid {
         grid-template-columns: repeat(6, 1fr);
 
@@ -314,7 +314,7 @@
         }
 
         @media (max-width: 480px) {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
@@ -327,7 +327,7 @@
         }
     }
 
-    // 8 items: 8 → 4 → 2 → 1
+    // 8 items: 8 → 4 → 2 → 2
     &[data-item-count="8"]:not([data-max-items]) &__grid {
         grid-template-columns: repeat(8, 1fr);
 
@@ -340,7 +340,7 @@
         }
 
         @media (max-width: 480px) {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
@@ -357,7 +357,7 @@
         }
     }
 
-    // 10 items: 10 → 5 → 2 → 1
+    // 10 items: 10 → 5 → 2 → 2
     &[data-item-count="10"]:not([data-max-items]) &__grid {
         grid-template-columns: repeat(10, 1fr);
 
@@ -370,11 +370,11 @@
         }
 
         @media (max-width: 480px) {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
-    // 12 items: 12 → 6 → 3 → 2 → 1
+    // 12 items: 12 → 6 → 3 → 2 → 2
     &[data-item-count="12"]:not([data-max-items]) &__grid {
         grid-template-columns: repeat(12, 1fr);
 
@@ -391,7 +391,7 @@
         }
 
         @media (max-width: 480px) {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 }
