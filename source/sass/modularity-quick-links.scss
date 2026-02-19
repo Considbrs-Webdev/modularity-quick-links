@@ -9,7 +9,7 @@
     --quick-links-border-radius: 0;
     --quick-links-hover-amount: 0.1;
     --quick-links-hover-color: rgba(0, 0, 0, var(--quick-links-hover-amount)); // Default: lighten. Use rgba(0, 0, 0, var(--quick-links-hover-amount)) to darken
-    --quick-links-transition: background-color 0.2s ease;
+    --quick-links-transition: background-color var(--transition-duration-medium, 0.3s) ease;
     --quick-links-icon-size: 1.5rem;
     --quick-links-icon-size-large: 3rem;
     --quick-links-icon-gap: 1rem;
@@ -163,16 +163,26 @@
             grid-template-columns: 1fr;
         }
 
+        // Hover overlay - always present, fades in on hover
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: var(--quick-links-hover-color);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--transition-duration-medium, 0.3s) ease;
+        }
+
         &:hover {
 
-            // Hover overlay effect
             &::before {
-                content: '';
-                position: absolute;
-                inset: 0;
-                background-color: var(--quick-links-hover-color);
                 opacity: 1;
-                pointer-events: none;
+            }
+
+            // Title underline when hovering anywhere on the card
+            .modularity-quick-links__title {
+                text-decoration: underline;
             }
         }
 
