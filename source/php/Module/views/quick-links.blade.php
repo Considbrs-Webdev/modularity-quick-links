@@ -1,6 +1,7 @@
 <div class="modularity-quick-links" data-max-items="{{ $maxItemsPerRow }}" data-gap="{{ $gap ?? 0 }}"
     data-large-icons="{{ $largeIcons ? 'true' : 'false' }}"
-    data-use-description="{{ $useShortDescription ? 'true' : 'false' }}" data-item-count="{{ count($links) }}">
+    data-use-description="{{ $useShortDescription ? 'true' : 'false' }}" data-item-count="{{ count($links) }}"
+    @if (!empty($quickLinksRootStyle ?? '')) style="{{ $quickLinksRootStyle }}" @endif>
     <div class="modularity-quick-links__grid">
         @foreach ($links as $linkItem)
             <a href="{{ $linkItem['link'] }}"

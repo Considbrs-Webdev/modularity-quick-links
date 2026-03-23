@@ -26,6 +26,8 @@ class QuickLinks extends \Modularity\Module
             'largeIcons' => !empty($fields['large_icons']),
             'links' => $this->parseLinks($fields['links'] ?? []),
             'gap' => isset($fields['link_gap']) && $fields['link_gap'] !== '' ? (int) $fields['link_gap'] : 0,
+            // Set by filters such as Modularity/Display/mod-quick-links/viewData; default avoids undefined Blade vars.
+            'quickLinksRootStyle' => '',
         ];
 
         return $data;

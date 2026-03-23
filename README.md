@@ -97,6 +97,12 @@ The module uses CSS custom properties that can be customized in your theme:
 }
 ```
 
+## Developer hooks
+
+Municipio’s `Display::renderView()` applies **`Modularity/Display/mod-quick-links/viewData`** to the array passed into the Blade template (after block and module data are merged). Hook it to add keys such as `quickLinksRootStyle` (for example `--quick-links-hover-color: …;`) for per-instance styling when a unique wrapper id is not available (e.g. Gutenberg blocks).
+
+The template outputs `style="{{ $quickLinksRootStyle }}"` on the root `.modularity-quick-links` element when that value is present.
+
 ## Responsive Behavior
 
 The grid automatically adapts to screen sizes:
