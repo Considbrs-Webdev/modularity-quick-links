@@ -1,163 +1,157 @@
+# Copyright (C) 2026 Consid Borås AB
+# This file is distributed under the MIT.
 msgid ""
 msgstr ""
-"Project-Id-Version: Modularity Quick Links\n"
-"Report-Msgid-Bugs-To: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"Project-Id-Version: Modularity Quick Links 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/modularity-quick-links\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-12-17 07:01+0100\n"
-"PO-Revision-Date: 2025-12-17 07:02+0100\n"
-"Language: sv\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
-"X-Basepath: ..\n"
-"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: modularity-quick-links.php\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.js\n"
-
-#: source/php/Module/QuickLinks.php:13
-#: source/php/Module/QuickLinks.php:14
-msgid "Quick Links"
-msgstr "Snabblänkar"
+"POT-Creation-Date: 2026-03-25T16:33:04+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: modularity-quick-links\n"
 
 #. Plugin Name of the plugin
 #: modularity-quick-links.php
 msgid "Modularity Quick Links"
-msgstr "Modularity – Snabblänkar"
+msgstr ""
 
 #. Plugin URI of the plugin
 #: modularity-quick-links.php
 msgid "https://github.com/Considbrs-Webdev/modularity-quick-links.git"
-msgstr "https://github.com/Considbrs-Webdev/modularity-quick-links.git"
+msgstr ""
 
 #. Description of the plugin
 #: modularity-quick-links.php
 msgid "A module for Modularity that creates the ability for the user to create a grid of cards that link to important pages."
-msgstr "En modul för Modularity som skapar möjligheten för användaren att skapa ett rutnät av kort som länkar till viktiga sidor."
+msgstr ""
 
 #. Author of the plugin
 #: modularity-quick-links.php
 msgid "Consid Borås AB"
-msgstr "Consid Borås AB"
+msgstr ""
 
 #. Author URI of the plugin
 #: modularity-quick-links.php
 msgid "https://github.com/Considbrs-Webdev"
-msgstr "https://github.com/Considbrs-Webdev"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:8
 msgid "Quick links"
-msgstr "Snabblänkar"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:12
 msgid "Max items per row"
-msgstr "Max antal per rad"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:25
 msgid "Two"
-msgstr "Två"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:26
 msgid "Four"
-msgstr "Fyra"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:27
 msgid "Six"
-msgstr "Sex"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:28
 msgid "Eight"
-msgstr "Åtta"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:45
 msgid "Icons?"
-msgstr "Ikoner?"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:66
 msgid "Short description?"
-msgstr "Kort beskrivning?"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:87
 msgid "Large icons?"
-msgstr "Stora ikoner?"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:116
 msgid "Link gap"
-msgstr "Mellanrum mellan länkar"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:129
 msgid "0 - 1px (No gap - original border style)"
-msgstr "0 – 1 px (inget mellanrum – original kantstil)"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:130
 msgid "1 - 0.5rem"
-msgstr "1 – 0,5 rem"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:131
 msgid "2 - 1rem"
-msgstr "2 – 1 rem"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:132
 msgid "3 - 1.5rem"
-msgstr "3 – 1,5 rem"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:133
 msgid "4 - 2rem"
-msgstr "4 – 2 rem"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:134
 msgid "5 - 2.5rem"
-msgstr "5 – 2,5 rem"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:135
 msgid "6 - 3rem"
-msgstr "6 – 3 rem"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:136
 msgid "7 - 3.5rem"
-msgstr "7 – 3,5 rem"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:137
 msgid "8 - 4rem"
-msgstr "8 – 4 rem"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:138
 msgid "9 - 4.5rem"
-msgstr "9 – 4,5 rem"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:139
 msgid "10 - 5rem"
-msgstr "10 – 5 rem"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:156
 msgid "Links"
-msgstr "Länkar"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:174
 msgid "Add link"
-msgstr "Lägg till länk"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:179
 msgid "Icon"
-msgstr "Ikon"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:206
 msgid "Title"
-msgstr "Titel"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:228
 msgid "Link"
-msgstr "Länk"
+msgstr ""
 
 #: source/php/AcfFields/php/settings.php:246
 msgid "Description"
-msgstr "Beskrivning"
+msgstr ""
+
+#: source/php/Module/QuickLinks.php:13
+#: source/php/Module/QuickLinks.php:14
+msgid "Quick Links"
+msgstr ""
 
 #: source/php/Module/QuickLinks.php:15
 msgid "Display a list of quick links"
-msgstr "Visa en lista med snabblänkar"
+msgstr ""
