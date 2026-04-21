@@ -45,13 +45,38 @@ class QuickLinks extends \Modularity\Module
         }
 
         return array_map(function ($link) {
+            $hrefTarget = $this->parseAcfLinkField($link['link'] ?? null);
+
             return [
                 'icon' => $link['icon'] ?? '',
                 'title' => $link['title'] ?? '',
-                'link' => $link['link'] ?? '',
+                'link' => $hrefTarget['url'],
+                'target' => $hrefTarget['target'],
                 'description' => $link['description'] ?? '',
             ];
         }, $links);
+    }
+
+    /**
+     * ACF link fields return ['url' => string, 'title' => string, 'target' => '_blank'|''].
+     *
+     * @param array|string|null $linkField
+     * @return array{url: string, target: string}
+     */
+    private function parseAcfLinkField($linkField): array
+    {
+        if (is_array($linkField)) {
+
+            return [
+                'url' => isset($linkField['url']) ? (string) $linkField['url'] : '',
+                'target' => isset($linkField['target']) ? (string) $linkField['target'] : '',
+            ];
+        }
+
+        if (is_string($linkField)) {
+            return ['url' => $linkField, 'target' => ''];
+        }
+        return ['url' => '', 'target' => ''];
     }
 
     /**

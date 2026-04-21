@@ -237,7 +237,7 @@ if (function_exists('acf_add_local_field_group')) {
                         'class' => '',
                         'id' => '',
                     ),
-                    'return_format' => 'url',
+                    'return_format' => 'array',
                     'allow_in_bindings' => 0,
                     'parent_repeater' => 'field_694460586a00e',
                 ),

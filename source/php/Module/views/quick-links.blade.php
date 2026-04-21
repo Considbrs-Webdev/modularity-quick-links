@@ -5,6 +5,8 @@
     <div class="modularity-quick-links__grid">
         @foreach ($links as $linkItem)
             <a href="{{ $linkItem['link'] }}"
+                @if (!empty($linkItem['target'])) target="{{ $linkItem['target'] }}" @endif
+                @if (($linkItem['target'] ?? '') === '_blank') rel="noopener noreferrer" @endif
                 class="modularity-quick-links__card {{ $largeIcons ? 'modularity-quick-links__card--large-icon' : '' }} {{ $useIcons ? 'modularity-quick-links__card--has-icon' : '' }}">
                 @if ($useIcons && !empty($linkItem['icon']))
                     <div class="modularity-quick-links__icon">
