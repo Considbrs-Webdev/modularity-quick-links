@@ -20,13 +20,13 @@ class QuickLinks extends \Modularity\Module
         $fields = $this->getFields();
 
         $data = [
+            'navId' => 'quick-links-' . ($this->ID ?: uniqid()),
             'maxItemsPerRow' => !empty($fields['max_items_per_row']) ? (int) $fields['max_items_per_row'] : 4,
             'useIcons' => !empty($fields['use_icons']),
             'useShortDescription' => !empty($fields['use_short_description']),
             'largeIcons' => !empty($fields['large_icons']),
             'links' => $this->parseLinks($fields['links'] ?? []),
             'gap' => isset($fields['link_gap']) && $fields['link_gap'] !== '' ? (int) $fields['link_gap'] : 0,
-            // Set by filters such as Modularity/Display/mod-quick-links/viewData; default avoids undefined Blade vars.
             'quickLinksRootStyle' => '',
         ];
 

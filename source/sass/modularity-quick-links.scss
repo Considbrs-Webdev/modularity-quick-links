@@ -81,6 +81,10 @@
       var(--quick-links-border-color);
   }
 
+  ul li + li {
+    margin-top: 0;
+  }
+
   &__grid {
     display: grid;
     gap: var(--quick-links-gap);
@@ -88,6 +92,9 @@
       auto-fit,
       minmax(var(--quick-links-card-min-width), 1fr)
     );
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   // Background color only needed when gap is 0 or empty (acts as border between cards)
@@ -184,8 +191,6 @@
     align-items: start;
     padding: var(--quick-links-card-padding-y) var(--quick-links-card-padding-x);
     background-color: var(--quick-links-background-color);
-    text-decoration: none;
-    color: inherit;
     transition: var(--quick-links-transition);
     position: relative;
 
@@ -205,21 +210,19 @@
       transition: opacity var(--transition-duration-medium, 0.3s) ease;
     }
 
-    &:hover {
+    &:has(.modularity-quick-links__link:hover) {
       &::before {
         opacity: 1;
       }
 
-      // Title underline when hovering anywhere on the card
-      .modularity-quick-links__title {
+      .modularity-quick-links__link {
         text-decoration: underline;
       }
     }
 
-    &:focus-visible {
+    &:has(.modularity-quick-links__link:focus-visible) {
       outline: 2px solid #0066cc;
       outline-offset: -2px;
-      position: relative;
       z-index: 1;
     }
 
@@ -247,6 +250,27 @@
     }
   }
 
+  &__link {
+    text-decoration: none;
+    color: inherit;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__link-label {
+    position: relative;
+    z-index: 3;
+  }
+
   &__icon {
     grid-column: 1;
     grid-row: 1; // Only first row, alongside title
@@ -257,6 +281,7 @@
     align-items: center;
     justify-content: center;
     color: var(--quick-links-icon-color);
+    pointer-events: none;
 
     i {
       font-size: var(--quick-links-icon-size);
@@ -299,6 +324,7 @@
     font-size: 0.9rem;
     line-height: 1.5;
     color: var(--quick-links-description-color);
+    pointer-events: none;
   }
 
   // Even distribution responsive rules based on item count
