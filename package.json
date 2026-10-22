@@ -1,6 +1,6 @@
 {
     "name": "@considbrs-webdev/modularity-quick-links",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A module for Modularity that creates the ability for the user to create a grid of cards that link to important pages.",
     "main": "",
     "repository": {

@@ -4,7 +4,7 @@
  * Plugin Name:       Modularity Quick Links
  * Plugin URI:        https://github.com/Considbrs-Webdev/modularity-quick-links.git
  * Description:       A module for Modularity that creates the ability for the user to create a grid of cards that link to important pages.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author:            Consid Borås AB
  * Author URI:        https://github.com/Considbrs-Webdev
  * License:           MIT
