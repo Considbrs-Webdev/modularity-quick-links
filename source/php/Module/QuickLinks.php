@@ -106,32 +106,4 @@ class QuickLinks extends \Modularity\Module
         }
     }
 
-    /**
-     * Enqueue scripts
-     * @return void
-     */
-    /* public function script(): void
-    {
-        $scriptFile = \ModularityQuickLinks\Helper\CacheBust::name('js/modularity-quick-links.js');
-
-        if ($scriptFile) {
-            wp_enqueue_script(
-                'modularity-quick-links',
-                MODULARITY_QUICK_LINKS_URL . '/assets/dist/' . $scriptFile,
-                [],
-                null,
-                true
-            );
-        }
-    } */
-
-    /**
-     * Available "magic" methods for modules:
-     * init()            What to do on initialization (if you must, use __construct with care, this will probably break stuff!!)
-     * data()            Use to send data to view (return array)
-     * style()           Enqueue style only when module is used on page
-     * script            Enqueue script only when module is used on page
-     * adminEnqueue()    Enqueue scripts for the module edit/add page in admin
-     * template()        Return the view template (blade) the module should use when displayed
-     */
 }

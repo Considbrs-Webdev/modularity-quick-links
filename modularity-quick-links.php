@@ -20,7 +20,6 @@ if (!defined('WPINC')) {
 
 define('MODULARITY_QUICK_LINKS_PATH', plugin_dir_path(__FILE__));
 define('MODULARITY_QUICK_LINKS_URL', plugins_url('', __FILE__));
-define('MODULARITY_QUICK_LINKS_VIEW_PATH', MODULARITY_QUICK_LINKS_PATH . 'views/');
 define('MODULARITY_QUICK_LINKS_MODULE_VIEW_PATH', plugin_dir_path(__FILE__) . 'source/php/Module/views');
 define('MODULARITY_QUICK_LINKS_MODULE_PATH', MODULARITY_QUICK_LINKS_PATH . 'source/php/Module/');
 
@@ -32,7 +31,6 @@ add_action('init', function() {
 if (file_exists(MODULARITY_QUICK_LINKS_PATH . 'vendor/autoload.php')) {
     require_once MODULARITY_QUICK_LINKS_PATH . 'vendor/autoload.php';
 }
-require_once MODULARITY_QUICK_LINKS_PATH . 'Public.php';
 
 // Acf auto import and export
 add_action('acf/init', function () {

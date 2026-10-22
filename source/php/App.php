@@ -2,7 +2,6 @@
 
 namespace ModularityQuickLinks;
 
-use ModularityQuickLinks\AcfFields\AcfFieldLoader;
 use ModularityQuickLinks\Helper\CacheBust;
 
 class App

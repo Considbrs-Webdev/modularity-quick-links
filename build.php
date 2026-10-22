@@ -44,7 +44,6 @@ $removables = [
     'phpunit.xml.dist',
     'README.md',
     './node_modules/',
-    './source/js/',
     './source/sass/',
     'LICENSE',
 ];

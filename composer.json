@@ -11,27 +11,12 @@
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "extra": {
-        "installer-paths": {
-            "vendor/{$vendor}/{$name}": [
-                "type:wordpress-muplugin",
-                "type:wordpress-theme",
-                "type:wordpress-plugin",
-                "type:acf-plugin"
-            ]
-        }
-    },
     "require": {
         "php": ">=8.0"
     },
     "autoload": {
         "psr-4": {
             "ModularityQuickLinks\\": "source/php/"
-        }
-    },
-    "config": {
-        "allow-plugins": {
-            "composer/installers": true
         }
     }
 }
