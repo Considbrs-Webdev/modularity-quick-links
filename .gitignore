@@ -46,6 +46,13 @@ Thumbs.db
 !.editorconfig
 !.github
 !.vscode
+!.agents/
+!.agents/**
+!.agents/skills/.toolkit-version
+!.claude/
+!.claude/**
+!.cursor/
+!.cursor/**
 
 # ignore dist folder
 dist/

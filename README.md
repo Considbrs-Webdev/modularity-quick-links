@@ -149,6 +149,18 @@ npm run build
 npm run dev
 ```
 
+`npm run watch` rebuilds assets when files change. There is no automated test or lint command.
+
+## Release
+
+Day-to-day work happens on `dev`. `main` is the release branch. Bump `Version` in `modularity-quick-links.php` and `version` in `package.json` together, add an entry to `CHANGELOG.md`, tag `X.Y.Z` (no `v` prefix) on `main`, and publish the GitHub release.
+
+`php build.php` installs dependencies and builds assets for a deployable tree. `--cleanup` removes development files. `--release` keeps `.git`. That script does not bump the version or create the tag.
+
+## AI
+
+Instructions for AI tools are in [AGENTS.md](AGENTS.md).
+
 ## License
 
 MIT
